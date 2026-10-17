@@ -70,8 +70,8 @@ window.E24_CONFIG = {
      conviene reemplazarlas por los originales cuando el negocio los envíe. */
   galeria: [
     { foto: 'assets/img/proyectos/casa-piscina-sistema-solar.webp', titulo: 'Vivienda con piscina y sistema solar', categoria: 'solar' },
-    { foto: 'assets/img/proyectos/cuarto-baterias-inversores.webp', titulo: 'Cuarto de baterías e inversores', categoria: 'baterias' },
-    { foto: 'assets/img/proyectos/techo-teja-paneles.webp', titulo: 'Paneles solares en techo de teja', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/cuarto-baterias-inversores-hd.webp', titulo: 'Cuarto de baterías e inversores', categoria: 'baterias' },
+    { foto: 'assets/img/proyectos/techo-teja-paneles-hd.webp', titulo: 'Paneles solares en techo de teja', categoria: 'solar' },
     { foto: 'assets/img/proyectos/equipo-piscina.webp', titulo: 'Equipo de filtración y calentamiento de piscina', categoria: 'piscinas' },
     { foto: 'assets/img/proyectos/local-comercial-paneles.webp', titulo: 'Sistema solar en local comercial', categoria: 'solar' },
     { foto: 'assets/img/proyectos/calentador-solar.webp', titulo: 'Calentador solar de agua', categoria: 'calentadores' },
@@ -114,13 +114,13 @@ window.E24_CONFIG = {
 
   servicios: [
     {
-      id: 'solar', icono: 'sun', categoria: 'solar', arte: 'solar', imagen: 'assets/img/proyectos/techo-teja-paneles.webp',
+      id: 'solar', icono: 'sun', categoria: 'solar', arte: 'solar', imagen: 'assets/img/proyectos/techo-teja-paneles-hd.webp',
       nombre: 'Sistemas solares conectados a la red',
       descripcion: 'Paneles solares para bajar el consumo eléctrico de su casa, negocio o finca, dimensionados según su recibo.',
       puntos: ['Estudio de consumo y del techo', 'Paneles, inversor y estructura', 'Instalación y puesta en marcha', 'Acompañamiento en el trámite con la distribuidora']
     },
     {
-      id: 'hibrido', icono: 'battery', categoria: 'solar', arte: 'hibrido', imagen: 'assets/img/proyectos/cuarto-baterias-inversores.webp',
+      id: 'hibrido', icono: 'battery', categoria: 'solar', arte: 'hibrido', imagen: 'assets/img/proyectos/cuarto-baterias-inversores-hd.webp',
       nombre: 'Sistemas híbridos y con baterías',
       descripcion: 'Energía solar con respaldo: sus equipos esenciales siguen funcionando cuando se va la luz.',
       puntos: ['Baterías de respaldo', 'Inversores híbridos', 'Selección de cargas esenciales', 'Sistemas aislados para fincas y cabinas']
