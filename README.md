@@ -63,7 +63,7 @@ de frente; las placas y fachadas no se leen. Miden unos 380 px: sirven para la g
 reemplazarlas por las fotos originales cuando el negocio las envíe (mismo nombre de archivo, ~1600 px, sin GPS).
 
 - Con foto real: sistemas solares, híbridos con baterías, calentadores solares, piscinas y mantenimiento.
-- `techo-teja-paneles.webp` y `cuarto-baterias-inversores.webp` se ampliaron ×4 con Real-ESRGAN (unos 760 px) para que
+- `techo-teja-paneles-hd.webp` y `cuarto-baterias-inversores-hd.webp` se ampliaron ×4 con Real-ESRGAN (unos 760 px) para que
   se vean nítidas en las tarjetas de servicios; las demás siguen ampliadas ×2.
 - Con ilustración (no hay fotos aún): bombas de presión, bombeo de pozo, plantas eléctricas y calentadores de agua.
 - El comparador **antes/después** sigue ilustrado: en las capturas no hay un par confirmado del mismo lugar.
