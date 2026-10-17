@@ -13,15 +13,17 @@ window.E24_CONFIG = {
 
   nombre: 'Energys 24',
   razonSocial: 'Energys 24 SRL',
-  eslogan: 'Energía y agua que no se detienen.',
+  eslogan: 'Expertos en electromecánica.',
   // Dominio definitivo (ej. 'https://www.energys24.com'). Vacío mientras no exista:
   // así no se publica una URL falsa en las etiquetas de Google y redes.
   sitioWeb: '',
 
-  /* ---------- Contacto (tomado de la página pública de Facebook) ---------- */
+  /* ---------- Contacto (tomado de la página de Facebook) ---------- */
   // WhatsApp con código de país, solo dígitos (Costa Rica = 506). Confirmar que tenga WhatsApp.
   whatsapp: '50688877242',
   telefono: '+506 8887 7242',
+  // Segundo número oficial (aviso publicado en Facebook). Vacío para ocultarlo.
+  telefono2: '+506 8430 6090',
   // Correo que aparece en la página de Facebook: confirmar que sea el del negocio.
   correo: 'grupopramac@gmail.com',
   direccion: 'Desamparados, San José',
@@ -56,24 +58,41 @@ window.E24_CONFIG = {
   solar: { hsp: 4.5, pr: 0.8, panelW: 550, m2PorPanel: 2.6, consumoInicial: 400 },
 
   /* ---------- Fotos ----------
-     Cada servicio acepta  imagen: 'assets/img/servicios/<archivo>.webp'.
+     Cada servicio acepta  imagen: 'assets/img/proyectos/<archivo>.webp'.
      Sin foto, la tarjeta usa la ilustración de su línea de servicio.
      antesDespues: fotos reales del comparador (las dos o ninguna). */
   antesDespues: { antes: '', despues: '', titulo: '' },
 
   /* ---------- Galería de proyectos (hasta 25 fotos) ----------
      { foto: 'assets/img/proyectos/<archivo>.webp', titulo: '...', categoria: 'solar', zona: null }
-     categoria: solar | agua | piscinas | plantas | calentadores | mantenimiento
-     Mientras foto sea null se muestra una tarjeta ilustrada «Foto por confirmar». */
+     categoria: id de la lista de categorías. Las primeras 12 se ven de entrada; el resto con «Ver más».
+     Fotos tomadas de las publicaciones de Facebook de Energys 24 (recortes de miniaturas):
+     conviene reemplazarlas por los originales cuando el negocio los envíe. */
   galeria: [
-    { foto: null, titulo: 'Sistema solar en techo residencial', categoria: 'solar' },
-    { foto: null, titulo: 'Equipo de presión e hidroneumático', categoria: 'agua' },
-    { foto: null, titulo: 'Cuarto de máquinas de piscina', categoria: 'piscinas' },
-    { foto: null, titulo: 'Planta eléctrica con transferencia', categoria: 'plantas' },
-    { foto: null, titulo: 'Calentador solar de agua', categoria: 'calentadores' },
-    { foto: null, titulo: 'Bomba sumergible para pozo', categoria: 'agua' },
-    { foto: null, titulo: 'Sistema híbrido con baterías', categoria: 'solar' },
-    { foto: null, titulo: 'Mantenimiento preventivo', categoria: 'mantenimiento' }
+    { foto: 'assets/img/proyectos/casa-piscina-sistema-solar.webp', titulo: 'Vivienda con piscina y sistema solar', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/cuarto-baterias-inversores.webp', titulo: 'Cuarto de baterías e inversores', categoria: 'baterias' },
+    { foto: 'assets/img/proyectos/techo-teja-paneles.webp', titulo: 'Paneles solares en techo de teja', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/equipo-piscina.webp', titulo: 'Equipo de filtración y calentamiento de piscina', categoria: 'piscinas' },
+    { foto: 'assets/img/proyectos/local-comercial-paneles.webp', titulo: 'Sistema solar en local comercial', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/calentador-solar.webp', titulo: 'Calentador solar de agua', categoria: 'calentadores' },
+    { foto: 'assets/img/proyectos/inversor-hibrido-baterias.webp', titulo: 'Inversor híbrido con baterías', categoria: 'baterias' },
+    { foto: 'assets/img/proyectos/piscina-terminada.webp', titulo: 'Piscina terminada', categoria: 'piscinas' },
+    { foto: 'assets/img/proyectos/vivienda-paneles-aerea.webp', titulo: 'Sistema solar residencial, vista aérea', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/cabana-paneles.webp', titulo: 'Paneles solares en cabaña', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/banco-baterias.webp', titulo: 'Banco de baterías de litio', categoria: 'baterias' },
+    { foto: 'assets/img/proyectos/tecnico-instalando-inversor.webp', titulo: 'Instalación de inversor', categoria: 'mantenimiento' },
+    { foto: 'assets/img/proyectos/techo-verde-paneles.webp', titulo: 'Paneles solares en techo de lámina', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/instalacion-paneles-techo.webp', titulo: 'Montaje de paneles en techo', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/vivienda-con-piscina.webp', titulo: 'Vivienda con piscina', categoria: 'piscinas' },
+    { foto: 'assets/img/proyectos/calentador-solar-techo.webp', titulo: 'Calentador solar en techo', categoria: 'calentadores' },
+    { foto: 'assets/img/proyectos/inversor-baterias-pared.webp', titulo: 'Inversor y baterías en pared', categoria: 'baterias' },
+    { foto: 'assets/img/proyectos/techo-lamina-paneles.webp', titulo: 'Sistema solar en techo comercial', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/piscina-construccion.webp', titulo: 'Piscina en construcción', categoria: 'piscinas' },
+    { foto: 'assets/img/proyectos/vivienda-paneles-cenital.webp', titulo: 'Paneles solares, vista cenital', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/bateria-litio.webp', titulo: 'Batería de litio instalada', categoria: 'baterias' },
+    { foto: 'assets/img/proyectos/paneles-zona-rural.webp', titulo: 'Paneles solares en zona rural', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/paneles-montana.webp', titulo: 'Paneles solares en la montaña', categoria: 'solar' },
+    { foto: 'assets/img/proyectos/controlador-carga-cabana.webp', titulo: 'Controlador de carga en cabaña', categoria: 'baterias' }
   ],
 
   /* ---------- Servicios (hasta 10) ----------
@@ -83,6 +102,7 @@ window.E24_CONFIG = {
   categorias: [
     { id: 'todos', nombre: 'Todos' },
     { id: 'solar', nombre: 'Energía solar' },
+    { id: 'baterias', nombre: 'Baterías e inversores' },
     { id: 'agua', nombre: 'Bombeo y agua' },
     { id: 'piscinas', nombre: 'Piscinas' },
     { id: 'plantas', nombre: 'Plantas eléctricas' },
@@ -94,19 +114,19 @@ window.E24_CONFIG = {
 
   servicios: [
     {
-      id: 'solar', icono: 'sun', categoria: 'solar', arte: 'solar',
+      id: 'solar', icono: 'sun', categoria: 'solar', arte: 'solar', imagen: 'assets/img/proyectos/techo-teja-paneles.webp',
       nombre: 'Sistemas solares conectados a la red',
       descripcion: 'Paneles solares para bajar el consumo eléctrico de su casa, negocio o finca, dimensionados según su recibo.',
       puntos: ['Estudio de consumo y del techo', 'Paneles, inversor y estructura', 'Instalación y puesta en marcha', 'Acompañamiento en el trámite con la distribuidora']
     },
     {
-      id: 'hibrido', icono: 'battery', categoria: 'solar', arte: 'hibrido',
+      id: 'hibrido', icono: 'battery', categoria: 'solar', arte: 'hibrido', imagen: 'assets/img/proyectos/cuarto-baterias-inversores.webp',
       nombre: 'Sistemas híbridos y con baterías',
       descripcion: 'Energía solar con respaldo: sus equipos esenciales siguen funcionando cuando se va la luz.',
       puntos: ['Baterías de respaldo', 'Inversores híbridos', 'Selección de cargas esenciales', 'Sistemas aislados para fincas y cabinas']
     },
     {
-      id: 'termosolar', icono: 'heater', categoria: 'calentadores', arte: 'termosolar',
+      id: 'termosolar', icono: 'heater', categoria: 'calentadores', arte: 'termosolar', imagen: 'assets/img/proyectos/calentador-solar.webp',
       nombre: 'Calentadores solares de agua',
       descripcion: 'Agua caliente con la energía del sol para duchas, cocinas y piscinas.',
       puntos: ['Colectores y termotanques', 'Dimensionamiento según personas', 'Instalación en techo', 'Mantenimiento y limpieza']
@@ -124,7 +144,7 @@ window.E24_CONFIG = {
       puntos: ['Bombas sumergibles', 'Bombeo solar sin electricidad', 'Tableros de control y protección', 'Riego y abastecimiento en fincas']
     },
     {
-      id: 'piscinas', icono: 'waves', categoria: 'piscinas', arte: 'piscina',
+      id: 'piscinas', icono: 'waves', categoria: 'piscinas', arte: 'piscina', imagen: 'assets/img/proyectos/equipo-piscina.webp',
       nombre: 'Equipos para piscinas',
       descripcion: 'Agua limpia y equipos eficientes: filtración, recirculación y calentamiento de piscinas.',
       puntos: ['Bombas y filtros', 'Cloradores y dosificación', 'Calentamiento solar o con bomba de calor', 'Cuarto de máquinas ordenado']
@@ -142,7 +162,7 @@ window.E24_CONFIG = {
       puntos: ['Calentadores de tanque', 'Calentadores de paso', 'Conexión eléctrica y protecciones', 'Reparación y cambio de resistencias']
     },
     {
-      id: 'mantenimiento', icono: 'wrench', categoria: 'mantenimiento', arte: 'mantenimiento',
+      id: 'mantenimiento', icono: 'wrench', categoria: 'mantenimiento', arte: 'mantenimiento', imagen: 'assets/img/proyectos/tecnico-instalando-inversor.webp',
       nombre: 'Mantenimiento preventivo y correctivo',
       descripcion: 'Revisiones programadas para que sus equipos duren más y fallen menos.',
       puntos: ['Limpieza de paneles solares', 'Revisión de bombas y tableros', 'Pruebas de plantas eléctricas', 'Atención de fallas']

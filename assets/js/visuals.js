@@ -7,8 +7,8 @@
 (() => {
   'use strict';
 
-  const SUN = ['#FFD43B', '#FF8A00'];
-  const AQUA = ['#3FE0F2', '#0A8FBF'];
+  const SUN = ['#FFC233', '#F57C00'];
+  const AQUA = ['#56C2F2', '#1B6FB8'];
   let seq = 0;
 
   /* ---------- Piezas comunes ---------- */
@@ -299,7 +299,7 @@
       const t = (now - t0) / 1000;
       ctx.clearRect(0, 0, W, H);
       for (const L of lines) {
-        const c = L.water ? '63,224,242' : '255,190,40';
+        const c = L.water ? '86,194,242' : '255,178,30';
         const off = (mx - 0.5) * 40 * L.depth;
         ctx.beginPath();
         for (let x = -20; x <= W + 20; x += 14) {

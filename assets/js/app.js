@@ -65,6 +65,7 @@
     $$('[data-demo]').forEach((el) => { el.hidden = !C.demo; });
     $$('[data-wa]').forEach((el) => { el.href = waUrl(el.dataset.msg || C.mensajeWhatsApp); });
     $$('[data-tel]').forEach((el) => { el.href = telUrl; });
+    $$('[data-tel2]').forEach((el) => { el.href = `tel:${String(C.telefono2 || '').replace(/[^\d+]/g, '')}`; });
     $$('[data-mail]').forEach((el) => { el.href = `mailto:${C.correo}`; });
     $('#year').textContent = new Date().getFullYear();
 
@@ -119,6 +120,7 @@
       legalName: C.razonSocial,
       description: 'Electromecánica: sistemas solares, bombeo de agua, equipos para piscinas, plantas eléctricas y calentadores de agua. Venta, instalación y mantenimiento.',
       telephone: C.telefono,
+      ...(C.telefono2 ? { contactPoint: [C.telefono, C.telefono2].map((t) => ({ '@type': 'ContactPoint', telephone: t, contactType: 'customer service', areaServed: 'CR', availableLanguage: 'es' })) } : {}),
       address: { '@type': 'PostalAddress', addressLocality: 'Desamparados', addressRegion: 'San José', addressCountry: 'CR' },
       areaServed: 'CR',
       sameAs: Object.values(C.redes || {}).filter(Boolean),
@@ -903,16 +905,50 @@
       const sub = [catName[g.categoria], g.zona].filter(Boolean).join(' · ');
       const cap = `<span class="gal__cap"><strong>${esc(g.titulo)}</strong>${sub ? `<small>${esc(sub)}</small>` : ''}</span>`;
       if (g.foto) {
-        return `<button type="button" class="gal reveal" data-cat="${esc(g.categoria)}" data-i="${i}" aria-label="Ver foto: ${esc(g.titulo)}">
-          <img src="${esc(g.foto)}" alt="${esc(g.titulo)}" loading="lazy"${g.foco ? ` style="object-position:${esc(g.foco)}"` : ''}>${cap}</button>`;
+        return `<button type="button" class="gal" data-cat="${esc(g.categoria)}" data-i="${i}" aria-label="Ver foto: ${esc(g.titulo)}">
+          <img src="${esc(g.foto)}" alt="${esc(g.titulo)}" loading="lazy" width="380" height="380"${g.foco ? ` style="object-position:${esc(g.foco)}"` : ''}>${cap}</button>`;
       }
       let arte = g.arte || ARTE[g.categoria] || 'solar';
       if (!g.arte && g.categoria === 'agua') arte = (artToggle++ % 2) ? 'pozo' : 'presion';
       if (!g.arte && g.categoria === 'solar' && /bater|híbrid|hibrid/i.test(g.titulo)) arte = 'hibrido';
-      return `<div class="gal gal--ph reveal" data-cat="${esc(g.categoria)}" role="img" aria-label="${esc(g.titulo)}: foto por confirmar">
+      return `<div class="gal gal--ph" data-cat="${esc(g.categoria)}" role="img" aria-label="${esc(g.titulo)}: foto por confirmar">
         ${V ? V.art(arte) : ''}<span class="gal__badge">Foto por confirmar</span>${cap}</div>`;
     }).join('');
-    bindFilters($('#gal-filters'), grid, '.gal', 'cat');
+    $('#gal-credit').hidden = !items.some((g) => g.foto);
+
+    // Filtro + «Ver más»: con «Todos» se muestran las primeras FIRST y el resto a pedido.
+    const FIRST = 12;
+    const moreWrap = $('#gal-more-wrap'), moreBtn = $('#gal-more');
+    let cat = 'todos', expanded = false;
+    function apply(animate) {
+      let n = 0;
+      const total = $$('.gal', grid).filter((card) => cat === 'todos' || card.dataset.cat === cat).length;
+      $$('.gal', grid).forEach((card) => {
+        const match = cat === 'todos' || card.dataset.cat === cat;
+        const show = match && (cat !== 'todos' || expanded || n < FIRST);
+        if (match) n++;
+        const was = !card.hidden;
+        card.hidden = !show;
+        if (show && animate && !was) { card.classList.remove('pop'); void card.offsetWidth; card.classList.add('pop'); }
+      });
+      const rest = total - FIRST;
+      moreWrap.hidden = !(cat === 'todos' && !expanded && rest > 0);
+      moreBtn.textContent = `Ver ${rest} trabajos más`;
+    }
+    $('#gal-filters').addEventListener('click', (e) => {
+      const btn = e.target.closest('.chipbtn');
+      if (!btn) return;
+      $$('.chipbtn', $('#gal-filters')).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      cat = btn.dataset.cat;
+      $$('.gal', grid).forEach((c) => { c.hidden = true; });
+      apply(true);
+    });
+    moreBtn.addEventListener('click', () => {
+      const first = $$('.gal', grid).filter((c) => c.hidden)[0];
+      expanded = true; apply(true);
+      if (first) first.focus();
+    });
+    apply(false);
 
     // Visor
     const lb = $('#lb');

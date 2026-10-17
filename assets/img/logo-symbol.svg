@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Energys 24">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 80 80" width="64" height="64" role="img" aria-label="Energys 24">
+  <circle cx="32" cy="32" r="40" fill="#fff"/>
   <defs>
-    <linearGradient id="e24-sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FF8A00"/></linearGradient>
-    <linearGradient id="e24-aqua" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FE0F2"/><stop offset="1" stop-color="#0A8FBF"/></linearGradient>
-    <clipPath id="e24-clip"><circle cx="32" cy="32" r="28.5"/></clipPath>
+    <linearGradient id="e24-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FA6E6"/><stop offset="1" stop-color="#1A7CC2"/></linearGradient>
+    <linearGradient id="e24-royal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F5BB0"/><stop offset="1" stop-color="#1A3A8A"/></linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="30" fill="#0A1B2E"/>
-  <g clip-path="url(#e24-clip)">
-    <path d="M0 43c8-5 16 5 24 0s16-5 24 0 12 4 16 1v20H0z" fill="url(#e24-aqua)"/>
-    <path d="M0 50c8-5 16 5 24 0s16-5 24 0 12 4 16 1v13H0z" fill="#07688F" opacity=".7"/>
+  <g fill="none" stroke="url(#e24-sky)" stroke-width="8.5">
+    <path d="M9.03 31.80A23 23 0 0 1 21.92 12.33"/>
+    <path d="M42.08 12.33A23 23 0 0 1 54.97 31.80"/>
   </g>
-  <circle cx="32" cy="32" r="30" fill="none" stroke="url(#e24-sun)" stroke-width="3.2"/>
-  <path d="M36.5 7 17.5 35.5h12l-4.5 21.5 21.5-30.5H34.3z" fill="url(#e24-sun)" stroke="#0A1B2E" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M5.17 37.5A27.2 27.2 0 0 0 58.83 37.5Q32 56.5 5.17 37.5Z" fill="url(#e24-royal)"/>
+  <rect x="28.2" y="2.5" width="7.6" height="25" rx="3.8" fill="url(#e24-royal)"/>
 </svg>

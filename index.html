@@ -22,7 +22,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Saira:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Archivo:wdth,wght@62..125,400..900&display=swap">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <script>
@@ -44,7 +44,7 @@
   <div class="intro" id="intro" aria-hidden="true">
     <div class="intro__in">
       <img class="intro__mark" src="assets/img/logo-symbol.svg" alt="" width="96" height="96">
-      <span class="intro__word">ENERGYS<b>24</b></span>
+      <span class="intro__word"><span>ENER<b>GYS 24</b></span><small>INGENIERIA ELECTROMECANICA</small></span>
     </div>
   </div>
 
@@ -115,6 +115,7 @@
     <div class="container topbar__in">
       <ul class="topbar__list">
         <li><a data-tel><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="telefono"></span></a></li>
+        <li data-if="telefono2" class="topbar__hide-sm"><a data-tel2><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="telefono2"></span></a></li>
         <li data-if="correo"><a data-mail><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span data-bind="correo"></span></a></li>
         <li class="topbar__hide-sm"><a href="#contacto"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-bind="direccion"></span></a></li>
       </ul>
@@ -126,8 +127,8 @@
   <header class="header" id="header">
     <div class="container header__in">
       <a class="brand" href="#inicio" aria-label="Energys 24 — inicio">
-        <img class="brand__mark" src="assets/img/logo-symbol.svg" alt="" width="46" height="46">
-        <span class="brand__word" aria-hidden="true">ENERGYS<b>24</b></span>
+        <img class="brand__mark" src="assets/img/logo-symbol.svg" alt="" width="48" height="48">
+        <span class="brand__word" aria-hidden="true"><span>ENER<b>GYS 24</b></span><small>INGENIERIA ELECTROMECANICA</small></span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Principal">
@@ -162,7 +163,7 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__in">
         <div class="hero__copy">
-          <p class="eyebrow eyebrow--light">Electromecánica · Desamparados, San José</p>
+          <p class="eyebrow eyebrow--light">Expertos en electromecánica · Costa Rica</p>
           <h1 class="hero__title">
             <span class="sr-only">Energía solar, bombeo, piscinas y plantas eléctricas en Costa Rica. </span>
             <span aria-hidden="true">Su <span class="rotator" id="rotator" data-words="casa,negocio,finca,piscina,empresa"><span class="rotator__word">casa</span></span><br>con energía que no se detiene</span>
@@ -235,8 +236,8 @@
           <div class="net__stage" id="net-stage">
             <svg class="net__svg" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
               <defs>
-                <radialGradient id="pkt-sun"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#FFC62B"/><stop offset="1" stop-color="#FF8A00" stop-opacity="0"/></radialGradient>
-                <radialGradient id="pkt-aqua"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#3FE0F2"/><stop offset="1" stop-color="#0A8FBF" stop-opacity="0"/></radialGradient>
+                <radialGradient id="pkt-sun"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#FFB21E"/><stop offset="1" stop-color="#F57C00" stop-opacity="0"/></radialGradient>
+                <radialGradient id="pkt-aqua"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#56C2F2"/><stop offset="1" stop-color="#1B6FB8" stop-opacity="0"/></radialGradient>
               </defs>
               <g id="net-links"></g>
               <g id="net-packets"></g>
@@ -333,6 +334,8 @@
         </div>
         <p class="gallery-note" id="gal-note" data-demo hidden><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>Las tarjetas ilustradas se reemplazan por las fotos reales de los trabajos de Energys 24 (hasta 25).</p>
         <div class="gallery" id="gallery"></div>
+        <div class="gallery-more" id="gal-more-wrap" hidden><button type="button" class="btn btn--outline" id="gal-more"></button></div>
+        <p class="gallery-credit" id="gal-credit" hidden>Fotos de trabajos publicados por Energys 24 en Facebook.</p>
       </div>
     </section>
 
@@ -583,6 +586,7 @@
           <div class="cside reveal">
             <ul class="cards">
               <li><a class="ccard" data-wa target="_blank" rel="noopener"><span class="ccard__icon ccard__icon--wa"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span><span><small id="wa-label">WhatsApp</small><strong data-bind="telefono"></strong></span></a></li>
+              <li data-if="telefono2"><a class="ccard" data-tel2><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><span><small>Otro teléfono oficial</small><strong data-bind="telefono2"></strong></span></a></li>
               <li id="card-tel"><a class="ccard" data-tel><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><span><small>Teléfono</small><strong data-bind="telefono"></strong></span></a></li>
               <li data-if="correo"><a class="ccard" data-mail><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span><small>Correo</small><strong data-bind="correo"></strong></span></a></li>
               <li><div class="ccard"><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><span><small>Ubicación</small><strong data-bind="direccion"></strong><em data-bind="direccionDetalle"></em></span></div></li>
@@ -612,10 +616,10 @@
     <div class="container footer__in">
       <div class="footer__brand">
         <a class="brand brand--footer" href="#inicio" aria-label="Energys 24 — volver al inicio">
-          <img class="brand__mark" src="assets/img/logo-symbol.svg" alt="" width="46" height="46" loading="lazy">
-          <span class="brand__word" aria-hidden="true">ENERGYS<b>24</b></span>
+          <img class="brand__mark" src="assets/img/logo-symbol.svg" alt="" width="48" height="48" loading="lazy">
+          <span class="brand__word" aria-hidden="true"><span>ENER<b>GYS 24</b></span><small>INGENIERIA ELECTROMECANICA</small></span>
         </a>
-        <p>Electromecánica en Desamparados, San José: sistemas solares, bombeo, piscinas, plantas eléctricas y calentadores.</p>
+        <p>Expertos en electromecánica: sistemas solares, sistemas de bombeo, equipos de piscina, plantas eléctricas y calentadores de agua.</p>
         <div class="socials" data-socials aria-label="Redes sociales"></div>
       </div>
       <nav class="footer__col" aria-label="Servicios">
@@ -639,6 +643,7 @@
         <ul>
           <li><a data-wa target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a></li>
           <li><a data-tel><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="telefono"></span></a></li>
+          <li data-if="telefono2"><a data-tel2><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="telefono2"></span></a></li>
           <li data-if="correo"><a data-mail><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span data-bind="correo"></span></a></li>
           <li><span class="footer__static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-bind="direccion"></span></span></li>
         </ul>
@@ -686,7 +691,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <noscript>
-    <div class="noscript">Para ver los servicios y usar el cotizador active JavaScript, o escríbanos por WhatsApp al +506 8887 7242.</div>
+    <div class="noscript">Para ver los servicios y usar el cotizador active JavaScript, o escríbanos por WhatsApp al +506 8887 7242 o llame al +506 8430 6090.</div>
   </noscript>
 
   <script src="assets/js/config.js"></script>
