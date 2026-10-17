@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="es-CR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energys 24 | Sistemas solares, bombeo, piscinas y plantas eléctricas en Costa Rica</title>
+  <meta name="description" content="Energys 24: electromecánica en Desamparados, San José. Venta, instalación y mantenimiento de sistemas solares, bombas y sistemas de presión, equipos para piscinas, plantas eléctricas y calentadores de agua. Cotice en línea o por WhatsApp.">
+  <meta name="theme-color" content="#06121F">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CR">
+  <meta property="og:site_name" content="Energys 24">
+  <meta property="og:title" content="Energys 24 | Energía solar, bombeo, piscinas y plantas eléctricas">
+  <meta property="og:description" content="Electromecánica en Desamparados, San José: sistemas solares, bombeo de agua, equipos para piscinas, plantas eléctricas y calentadores. Venta, instalación y mantenimiento.">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Al tener dominio: agregar canonical, og:url y og:image con la URL completa (ver README). -->
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Saira:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script>
+    /* Aplica el tema antes de pintar para evitar parpadeos. */
+    (function () {
+      var d = document.documentElement, t = null, cur = d.getAttribute('data-theme');
+      try { t = localStorage.getItem('energys24-theme'); } catch (e) {}
+      if (t !== 'dark' && t !== 'light') {
+        t = (cur === 'dark' || cur === 'light') ? cur
+          : (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      }
+      d.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+</head>
+<body>
+  <!-- ====================== INTRO (una vez por sesión) ====================== -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__in">
+      <img class="intro__mark" src="assets/img/logo-symbol.svg" alt="" width="96" height="96">
+      <span class="intro__word">ENERGYS<b>24</b></span>
+    </div>
+  </div>
+
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- ====================== ICONOS (sprite SVG) ====================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"/></symbol>
+      <symbol id="i-panel" viewBox="0 0 24 24"><path d="M5 3h14l2 10H3z"/><path d="M4 8h16M9.6 3l-.8 10M14.4 3l.8 10"/><path d="M12 13v5M8 21h8"/></symbol>
+      <symbol id="i-battery" viewBox="0 0 24 24"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1"/><path d="m11 7-3 5h4l-3 5"/><path d="M22 11v2"/></symbol>
+      <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+      <symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
+      <symbol id="i-generator" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M6 19v2M18 19v2M6 10h3M6 13h3M6 16h3"/><path d="m16 8.5-2.5 4H17l-2.5 4"/></symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+      <symbol id="i-heater" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><path d="M6 1.5v1M6 9.5v1M1.5 6h1M9.5 6h1"/><rect x="13" y="3" width="8" height="18" rx="4"/><path d="M15.5 9h3M15.5 13h3"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+      <symbol id="i-pole" viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M3 5h18"/><path d="M4 3v2M8 3v2M16 3v2M20 3v2"/><path d="m19 5-7 7-7-7"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15v3M8 18h.01M12 18h.01"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></symbol>
+      <symbol id="i-lr" viewBox="0 0 24 24"><path d="m9 18-6-6 6-6M15 6l6 6-6 6"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+      <symbol id="i-navigation" viewBox="0 0 24 24"><path d="m3 11 19-9-9 19-2-8z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
+      <symbol id="i-tiktok" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07Z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ====================== AVISO DE PROPUESTA (demo: true) ====================== -->
+  <div class="demo-bar" data-demo hidden>
+    <div class="container demo-bar__in">
+      <span class="demo-bar__tag">Propuesta</span>
+      <p>Sitio en revisión: los textos son una propuesta y los datos marcados «Por confirmar» se completan con Energys 24.</p>
+    </div>
+  </div>
+
+  <!-- ====================== BARRA SUPERIOR ====================== -->
+  <div class="topbar">
+    <div class="container topbar__in">
+      <ul class="topbar__list">
+        <li><a data-tel><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="telefono"></span></a></li>
+        <li data-if="correo"><a data-mail><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span data-bind="correo"></span></a></li>
+        <li class="topbar__hide-sm"><a href="#contacto"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-bind="direccion"></span></a></li>
+      </ul>
+      <div class="socials socials--sm" data-socials aria-label="Redes sociales"></div>
+    </div>
+  </div>
+
+  <!-- ====================== ENCABEZADO ====================== -->
+  <header class="header" id="header">
+    <div class="container header__in">
+      <a class="brand" href="#inicio" aria-label="Energys 24 — inicio">
+        <img class="brand__mark" src="assets/img/logo-symbol.svg" alt="" width="46" height="46">
+        <span class="brand__word" aria-hidden="true">ENERGYS<b>24</b></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="#inicio" class="nav__link">Inicio</a>
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#sistema" class="nav__link">Su sistema</a>
+        <a href="#calculadora" class="nav__link">Calculadora</a>
+        <a href="#proyectos" class="nav__link">Proyectos</a>
+        <a href="#cotizador" class="nav__link">Cotizar</a>
+        <a href="#contacto" class="nav__link">Contacto</a>
+        <a class="btn btn--wa btn--sm nav__wa" data-wa target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconbtn" id="theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro">
+          <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <a class="btn btn--accent btn--sm header__cta" href="#cotizador">Cotizar</a>
+        <button class="iconbtn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+          <svg class="icon icon--open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="inicio">
+      <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__in">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--light">Electromecánica · Desamparados, San José</p>
+          <h1 class="hero__title">
+            <span class="sr-only">Energía solar, bombeo, piscinas y plantas eléctricas en Costa Rica. </span>
+            <span aria-hidden="true">Su <span class="rotator" id="rotator" data-words="casa,negocio,finca,piscina,empresa"><span class="rotator__word">casa</span></span><br>con energía que no se detiene</span>
+          </h1>
+          <p class="hero__lead">
+            Sistemas solares, bombeo de agua, equipos para piscinas, plantas eléctricas y calentadores:
+            <strong>venta, instalación y mantenimiento</strong> con una sola empresa que conoce cada sistema de punta a punta.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--accent btn--lg mag" href="#cotizador">Cotizar mi proyecto <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--wa btn--lg mag" data-wa target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Escribir por WhatsApp</a>
+          </div>
+          <ul class="hero__checks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg>Energía solar</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-droplet"/></svg>Bombeo</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-waves"/></svg>Piscinas</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-generator"/></svg>Plantas eléctricas</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-flame"/></svg>Calentadores</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="orbit orbit--1">
+            <div class="orbit__item" style="--a:0deg"><span class="orbit__chip orbit__chip--sun orbit__chip--fwd"><svg class="icon"><use href="#i-sun"/></svg></span></div>
+            <div class="orbit__item" style="--a:120deg"><span class="orbit__chip orbit__chip--aqua orbit__chip--fwd"><svg class="icon"><use href="#i-droplet"/></svg></span></div>
+            <div class="orbit__item" style="--a:240deg"><span class="orbit__chip orbit__chip--sun orbit__chip--fwd"><svg class="icon"><use href="#i-generator"/></svg></span></div>
+          </div>
+          <div class="orbit orbit--2">
+            <div class="orbit__item" style="--a:60deg"><span class="orbit__chip orbit__chip--aqua orbit__chip--rev"><svg class="icon"><use href="#i-waves"/></svg></span></div>
+            <div class="orbit__item" style="--a:200deg"><span class="orbit__chip orbit__chip--sun orbit__chip--rev"><svg class="icon"><use href="#i-flame"/></svg></span></div>
+            <div class="orbit__item" style="--a:310deg"><span class="orbit__chip orbit__chip--aqua orbit__chip--rev"><svg class="icon"><use href="#i-battery"/></svg></span></div>
+          </div>
+          <img class="hero__mark" src="assets/img/logo-symbol.svg" alt="" width="240" height="240">
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="stats" id="stats" aria-label="Datos clave"></ul>
+      </div>
+    </section>
+
+    <!-- ====================== MARQUESINA ====================== -->
+    <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+    <!-- ====================== SERVICIOS ====================== -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Servicios</p>
+          <h2 class="section__title">Energía y agua, resueltas por una sola empresa</h2>
+          <p class="section__lead">Venta, instalación, mantenimiento y reparación. Elija un servicio para agregarlo a su cotización o escríbanos por WhatsApp.</p>
+        </header>
+
+        <div class="filters reveal" id="filters" role="group" aria-label="Filtrar servicios por categoría"></div>
+        <div class="svc-grid" id="svc-grid"></div>
+      </div>
+    </section>
+
+    <!-- ====================== SISTEMA INTERACTIVO ====================== -->
+    <section class="section section--dark section--net" id="sistema">
+      <div class="container">
+        <header class="section__head section__head--light reveal">
+          <p class="eyebrow eyebrow--light">Su sistema, de punta a punta</p>
+          <h2 class="section__title">Del sol y el pozo hasta cada grifo y tomacorriente</h2>
+          <p class="section__lead">La energía y el agua recorren su propiedad. Toque cada equipo para ver cómo lo instalamos y lo cuidamos.</p>
+          <ul class="net__legend" aria-label="Leyenda"><li class="is-e">Energía</li><li class="is-w">Agua</li></ul>
+        </header>
+
+        <div class="net reveal">
+          <div class="net__stage" id="net-stage">
+            <svg class="net__svg" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="pkt-sun"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#FFC62B"/><stop offset="1" stop-color="#FF8A00" stop-opacity="0"/></radialGradient>
+                <radialGradient id="pkt-aqua"><stop offset="0" stop-color="#ffffff"/><stop offset=".35" stop-color="#3FE0F2"/><stop offset="1" stop-color="#0A8FBF" stop-opacity="0"/></radialGradient>
+              </defs>
+              <g id="net-links"></g>
+              <g id="net-packets"></g>
+            </svg>
+            <div id="net-nodes"></div>
+          </div>
+          <aside class="net__panel" id="net-panel" aria-live="polite" aria-label="Detalle del equipo seleccionado"></aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== CALCULADORA SOLAR ====================== -->
+    <section class="section section--alt" id="calculadora">
+      <div class="container">
+        <div class="calc">
+          <div class="calc__copy reveal">
+            <p class="eyebrow">Calculadora solar</p>
+            <h2 class="section__title">¿Cuántos paneles necesita su propiedad?</h2>
+            <p class="section__lead">Mueva el control con el consumo mensual de su recibo de luz (en kWh) y vea un tamaño de sistema de referencia.</p>
+            <ul class="ticks">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>El consumo en kWh aparece en su recibo, junto al historial de los últimos meses.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Use un promedio: los meses de más calor o más uso suelen subir.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>El diseño final se confirma con una visita técnica.</li>
+            </ul>
+          </div>
+
+          <div class="calc__card reveal" id="calc">
+            <div class="calc__input">
+              <label for="calc-kwh">Consumo mensual promedio</label>
+              <div class="calc__value"><output id="calc-kwh-out" for="calc-kwh">400</output> <span>kWh/mes</span></div>
+              <input type="range" id="calc-kwh" min="100" max="3000" step="10" value="400" aria-describedby="calc-hint">
+              <div class="calc__scale" aria-hidden="true"><span>100</span><span>1 500</span><span>3 000</span></div>
+              <p class="calc__hint" id="calc-hint">O escríbalo: <input type="number" id="calc-kwh-num" min="50" max="20000" step="10" value="400" inputmode="numeric" aria-label="Consumo mensual en kWh"> kWh</p>
+            </div>
+            <div class="calc__goal" role="radiogroup" aria-labelledby="calc-goal-l">
+              <span class="qgroup__label" id="calc-goal-l">¿Cuánto de su consumo quiere cubrir?</span>
+              <div class="seg">
+                <label class="seg__opt"><input type="radio" name="calc-goal" value="0.5"><span>50 %</span></label>
+                <label class="seg__opt"><input type="radio" name="calc-goal" value="0.75"><span>75 %</span></label>
+                <label class="seg__opt"><input type="radio" name="calc-goal" value="1" checked><span>100 %</span></label>
+              </div>
+            </div>
+
+            <div class="calc__out" aria-live="polite">
+              <div class="calc__panels" id="calc-panels" aria-hidden="true"></div>
+              <dl class="calc__res">
+                <div><dt>Sistema sugerido</dt><dd><strong id="calc-kwp">—</strong> kWp</dd></div>
+                <div><dt>Paneles de <span id="calc-pw">550</span> W</dt><dd><strong id="calc-n">—</strong></dd></div>
+                <div><dt>Área de techo aprox.</dt><dd><strong id="calc-m2">—</strong> m²</dd></div>
+                <div><dt>Generación estimada</dt><dd><strong id="calc-gen">—</strong> kWh/mes</dd></div>
+              </dl>
+            </div>
+            <p class="calc__note" id="calc-note">Estimación referencial con <span id="calc-hsp">4,5</span> horas solares pico al día. La orientación, la sombra y la zona cambian el resultado.</p>
+            <div class="calc__actions">
+              <button type="button" class="btn btn--accent" id="calc-add">Agregar a mi cotización <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              <a class="btn btn--outline" id="calc-wa" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Consultar por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PROYECTOS: ANTES / DESPUÉS + GALERÍA ====================== -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="ba-wrap">
+          <div class="ba-copy reveal">
+            <p class="eyebrow">Proyectos</p>
+            <h2 class="section__title">El cambio se nota desde el primer día</h2>
+            <p class="section__lead" id="ba-lead">Un techo que solo protegía ahora también produce energía. Arrastre para comparar.</p>
+            <ul class="ticks">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Diseño según su consumo real, no a ojo.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Estructura, cableado y protecciones bien instalados.</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pruebas con usted antes de entregar.</li>
+            </ul>
+            <button type="button" class="btn btn--primary" data-quote="solar">Cotizar sistema solar <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+
+          <figure class="ba reveal" id="ba">
+            <div class="ba__layer ba__layer--after" id="ba-after"></div>
+            <div class="ba__layer ba__layer--before" id="ba-before"></div>
+            <span class="ba__tag ba__tag--before">Antes</span>
+            <span class="ba__tag ba__tag--after">Después</span>
+            <div class="ba__handle" role="slider" tabindex="0" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <span class="ba__knob"><svg class="icon" aria-hidden="true"><use href="#i-lr"/></svg></span>
+            </div>
+            <figcaption class="ba__cap" id="ba-cap">Ilustración referencial. Arrastre para comparar.</figcaption>
+          </figure>
+        </div>
+
+        <div class="gallery-head reveal">
+          <h3 class="gallery-head__title">Trabajos realizados</h3>
+          <div class="filters filters--sm" id="gal-filters" role="group" aria-label="Filtrar proyectos por tipo"></div>
+        </div>
+        <p class="gallery-note" id="gal-note" data-demo hidden><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>Las tarjetas ilustradas se reemplazan por las fotos reales de los trabajos de Energys 24 (hasta 25).</p>
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </section>
+
+    <!-- ====================== DIAGNÓSTICO ====================== -->
+    <section class="section section--alt" id="diagnostico">
+      <div class="container">
+        <header class="section__head section__head--center reveal">
+          <p class="eyebrow">Diagnóstico rápido</p>
+          <h2 class="section__title">¿Qué está pasando con sus equipos?</h2>
+          <p class="section__lead">Responda dos preguntas y reciba primeros pasos seguros y una recomendación. Sin compromiso.</p>
+        </header>
+        <div class="diag reveal" id="diag"></div>
+      </div>
+    </section>
+
+    <!-- ====================== COTIZADOR + CITA ====================== -->
+    <section class="section section--dark" id="cotizador">
+      <div class="container">
+        <header class="section__head section__head--light reveal">
+          <p class="eyebrow eyebrow--light">Cotizador en línea</p>
+          <h2 class="section__title">Arme su cotización y agende la visita</h2>
+          <p class="section__lead">Seleccione lo que necesita, elija si desea una visita técnica y envíe la solicitud por WhatsApp o correo. Le respondemos con una propuesta.</p>
+        </header>
+
+        <div class="quote reveal">
+          <form class="quote__form" id="quote-form" novalidate autocomplete="on">
+            <fieldset class="qstep">
+              <legend><span class="qstep__n">1</span>¿Qué necesita?</legend>
+              <p class="qstep__hint">Puede elegir varios servicios.</p>
+              <div class="qpick" id="quote-picks"></div>
+              <p class="field__error" id="err-svc" role="alert" hidden>Seleccione al menos un servicio.</p>
+            </fieldset>
+
+            <fieldset class="qstep">
+              <legend><span class="qstep__n">2</span>Sobre el lugar</legend>
+              <div class="qrow">
+                <div class="qgroup">
+                  <span class="qgroup__label" id="lbl-inmueble">Tipo de propiedad</span>
+                  <div class="seg" role="radiogroup" aria-labelledby="lbl-inmueble">
+                    <label class="seg__opt"><input type="radio" name="inmueble" value="Casa" checked><span>Casa</span></label>
+                    <label class="seg__opt"><input type="radio" name="inmueble" value="Comercio"><span>Comercio</span></label>
+                    <label class="seg__opt"><input type="radio" name="inmueble" value="Industria"><span>Industria</span></label>
+                    <label class="seg__opt"><input type="radio" name="inmueble" value="Finca"><span>Finca</span></label>
+                    <label class="seg__opt"><input type="radio" name="inmueble" value="Condominio"><span>Condominio</span></label>
+                  </div>
+                </div>
+                <div class="qgroup">
+                  <span class="qgroup__label" id="lbl-urgencia">Urgencia</span>
+                  <div class="seg" role="radiogroup" aria-labelledby="lbl-urgencia">
+                    <label class="seg__opt"><input type="radio" name="urgencia" value="Normal" checked><span>Normal</span></label>
+                    <label class="seg__opt"><input type="radio" name="urgencia" value="Urgente"><span>Urgente</span></label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="qstep">
+              <legend><span class="qstep__n">3</span>Visita técnica</legend>
+              <p class="qstep__hint">Para medir, revisar el equipo o el techo y darle un precio exacto.</p>
+              <div class="seg" role="radiogroup" aria-label="¿Desea agendar una visita técnica?">
+                <label class="seg__opt"><input type="radio" name="visita" value="Sí" checked><span>Sí, quiero agendar</span></label>
+                <label class="seg__opt"><input type="radio" name="visita" value="No"><span>Solo cotización</span></label>
+              </div>
+              <div class="fields visit" id="visit-fields">
+                <div class="field">
+                  <label for="q-fecha">Fecha preferida</label>
+                  <input id="q-fecha" name="fecha" type="date">
+                  <p class="field__error" id="err-fecha" role="alert" hidden>Elija una fecha a partir de mañana.</p>
+                </div>
+                <div class="field">
+                  <span class="field__label" id="lbl-franja">Horario</span>
+                  <div class="seg" role="radiogroup" aria-labelledby="lbl-franja">
+                    <label class="seg__opt"><input type="radio" name="franja" value="Mañana" checked><span>Mañana</span></label>
+                    <label class="seg__opt"><input type="radio" name="franja" value="Tarde"><span>Tarde</span></label>
+                    <label class="seg__opt"><input type="radio" name="franja" value="Cualquiera"><span>Cualquiera</span></label>
+                  </div>
+                </div>
+                <p class="field--full visit__note">La fecha es una preferencia: le confirmamos la disponibilidad por WhatsApp.</p>
+              </div>
+            </fieldset>
+
+            <fieldset class="qstep">
+              <legend><span class="qstep__n">4</span>Sus datos</legend>
+              <div class="fields">
+                <div class="field">
+                  <label for="q-nombre">Nombre <abbr title="obligatorio">*</abbr></label>
+                  <input id="q-nombre" name="nombre" type="text" autocomplete="name" placeholder="Su nombre">
+                  <p class="field__error" id="err-nombre" role="alert" hidden>Indique su nombre.</p>
+                </div>
+                <div class="field">
+                  <label for="q-telefono">Teléfono / WhatsApp</label>
+                  <input id="q-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="8888 8888">
+                  <p class="field__error" id="err-telefono" role="alert" hidden>Ingrese un teléfono válido (mínimo 8 dígitos).</p>
+                </div>
+                <div class="field">
+                  <label for="q-correo">Correo (opcional)</label>
+                  <input id="q-correo" name="correo" type="email" autocomplete="email" placeholder="usted@correo.com">
+                  <p class="field__error" id="err-correo" role="alert" hidden>Revise el formato del correo.</p>
+                </div>
+                <div class="field">
+                  <label for="q-provincia">Provincia</label>
+                  <select id="q-provincia" name="provincia">
+                    <option value="">Elegir…</option>
+                    <option>San José</option><option>Alajuela</option><option>Cartago</option><option>Heredia</option>
+                    <option>Guanacaste</option><option>Puntarenas</option><option>Limón</option>
+                  </select>
+                </div>
+                <div class="field field--full">
+                  <label for="q-zona">Cantón, distrito o referencia</label>
+                  <input id="q-zona" name="zona" type="text" autocomplete="address-level2" placeholder="Ej.: Desamparados, San Rafael Arriba">
+                </div>
+                <div class="field field--full">
+                  <label for="q-detalle">Detalles adicionales</label>
+                  <textarea id="q-detalle" name="detalle" rows="3" placeholder="Ej.: consumo del recibo, modelo de la bomba, tamaño de la piscina, equipos que quiere respaldar…"></textarea>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+
+          <aside class="quote__summary" aria-labelledby="sum-title">
+            <div class="summary">
+              <div class="summary__head">
+                <h3 id="sum-title">Su solicitud</h3>
+                <span class="badge" id="sum-count" aria-live="polite">0</span>
+              </div>
+              <ul class="summary__list" id="sum-list" aria-live="polite"></ul>
+              <p class="summary__empty" id="sum-empty">Aún no ha seleccionado servicios. Elija uno a la izquierda para comenzar.</p>
+              <dl class="summary__meta" id="sum-meta"></dl>
+              <div class="summary__actions">
+                <button type="button" class="btn btn--wa btn--block" id="q-send-wa"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Enviar por WhatsApp</button>
+                <button type="button" class="btn btn--primary btn--block" id="q-send-endpoint" hidden><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Enviar solicitud</button>
+                <button type="button" class="btn btn--ghost btn--block" id="q-send-mail" data-if="correo"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Enviar por correo</button>
+                <button type="button" class="linkbtn" id="q-copy"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copiar resumen</button>
+              </div>
+              <p class="summary__note">Sin compromiso. Sus datos solo se usan para responder su solicitud.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== NOSOTROS + PROCESO ====================== -->
+    <section class="section" id="nosotros">
+      <div class="container">
+        <div class="about">
+          <div class="about__copy reveal">
+            <p class="eyebrow">Sobre nosotros</p>
+            <h2 class="section__title">Electromecánica con todo bajo un mismo techo</h2>
+            <p><strong>Energys 24 SRL</strong> es una empresa de electromecánica ubicada en <strong>Desamparados, San José</strong>. Trabajamos con los sistemas que mantienen una propiedad en marcha: la energía solar, el agua que llega a cada grifo, la piscina, el respaldo eléctrico y el agua caliente.</p>
+            <p>Al atender todo con un mismo equipo, cada instalación se piensa completa: la bomba con su protección eléctrica, la planta con su transferencia, el sistema solar con su tablero.</p>
+            <dl class="facts" id="facts"></dl>
+            <div class="about__cta">
+              <a class="btn btn--primary" href="#cotizador">Pedir cotización</a>
+              <a class="btn btn--outline" href="#contacto">Contáctenos</a>
+            </div>
+          </div>
+
+          <ul class="values">
+            <li class="value reveal">
+              <span class="value__icon"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg></span>
+              <div><h3>Un solo proveedor</h3><p>Solar, bombeo, piscinas, plantas y calentadores: menos intermediarios y una sola responsable.</p></div>
+            </li>
+            <li class="value reveal">
+              <span class="value__icon"><svg class="icon" aria-hidden="true"><use href="#i-calc"/></svg></span>
+              <div><h3>Dimensionado con datos</h3><p>Calculamos según su consumo, sus equipos y su espacio, para no pagar de más ni quedarse corto.</p></div>
+            </li>
+            <li class="value reveal">
+              <span class="value__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <div><h3>Instalación segura</h3><p>Protecciones eléctricas, transferencias y conexiones hechas para durar y para cuidar a su familia.</p></div>
+            </li>
+            <li class="value reveal">
+              <span class="value__icon value__icon--wa"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+              <div><h3>Atención directa</h3><p>Escríbanos por WhatsApp y hable directamente con quien atenderá su proyecto.</p></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="process reveal" id="process">
+          <h3 class="process__title">Así trabajamos</h3>
+          <ol class="process__steps">
+            <li><span class="process__icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span><h4>Visita y diagnóstico</h4><p>Revisamos su consumo, sus equipos y el lugar.</p></li>
+            <li><span class="process__icon"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span><h4>Diseño y cotización</h4><p>Le proponemos la solución con un precio claro.</p></li>
+            <li><span class="process__icon"><svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg></span><h4>Instalación</h4><p>Montaje, conexiones y protecciones.</p></li>
+            <li><span class="process__icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><h4>Pruebas y entrega</h4><p>Probamos todo con usted y le explicamos el uso.</p></li>
+            <li><span class="process__icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><h4>Mantenimiento</h4><p>Revisiones para que siga funcionando.</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== PREGUNTAS ====================== -->
+    <section class="section section--alt" id="preguntas">
+      <div class="container container--narrow">
+        <header class="section__head section__head--center reveal">
+          <p class="eyebrow">Preguntas frecuentes</p>
+          <h2 class="section__title">Resolvemos sus dudas</h2>
+        </header>
+        <div class="faq reveal" id="faq"></div>
+        <p class="faq__more reveal">¿No encuentra su respuesta? <a data-wa data-msg="Hola Energys 24, tengo una consulta:" target="_blank" rel="noopener">Escríbanos por WhatsApp</a>.</p>
+      </div>
+    </section>
+
+    <!-- ====================== CONTACTO ====================== -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2 class="section__title">Hablemos de su proyecto</h2>
+          <p class="section__lead">Escríbanos, llámenos o visítenos. Con gusto le atendemos.</p>
+        </header>
+
+        <div class="contact">
+          <form class="cform reveal" id="contact-form" novalidate>
+            <h3>Envíenos un mensaje</h3>
+            <div class="fields">
+              <div class="field">
+                <label for="c-nombre">Nombre <abbr title="obligatorio">*</abbr></label>
+                <input id="c-nombre" name="nombre" type="text" autocomplete="name" placeholder="Su nombre">
+                <p class="field__error" id="cerr-nombre" role="alert" hidden>Indique su nombre.</p>
+              </div>
+              <div class="field">
+                <label for="c-telefono">Teléfono / WhatsApp</label>
+                <input id="c-telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" placeholder="8888 8888">
+                <p class="field__error" id="cerr-telefono" role="alert" hidden>Ingrese un teléfono válido (mínimo 8 dígitos).</p>
+              </div>
+              <div class="field field--full">
+                <label for="c-correo">Correo (opcional)</label>
+                <input id="c-correo" name="correo" type="email" autocomplete="email" placeholder="usted@correo.com">
+                <p class="field__error" id="cerr-correo" role="alert" hidden>Revise el formato del correo.</p>
+              </div>
+              <div class="field field--full">
+                <label for="c-asunto">Me interesa</label>
+                <select id="c-asunto" name="asunto"></select>
+              </div>
+              <div class="field field--full">
+                <label for="c-mensaje">Mensaje <abbr title="obligatorio">*</abbr></label>
+                <textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Cuéntenos cómo podemos ayudarle"></textarea>
+                <p class="field__error" id="cerr-mensaje" role="alert" hidden>Escriba su mensaje.</p>
+              </div>
+            </div>
+            <div class="cform__actions">
+              <button type="button" class="btn btn--wa" id="c-send-wa"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>Enviar por WhatsApp</button>
+              <button type="button" class="btn btn--primary" id="c-send-endpoint" hidden><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>Enviar mensaje</button>
+              <button type="button" class="btn btn--outline" id="c-send-mail" data-if="correo"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Enviar por correo</button>
+            </div>
+          </form>
+
+          <div class="cside reveal">
+            <ul class="cards">
+              <li><a class="ccard" data-wa target="_blank" rel="noopener"><span class="ccard__icon ccard__icon--wa"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span><span><small id="wa-label">WhatsApp</small><strong data-bind="telefono"></strong></span></a></li>
+              <li id="card-tel"><a class="ccard" data-tel><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><span><small>Teléfono</small><strong data-bind="telefono"></strong></span></a></li>
+              <li data-if="correo"><a class="ccard" data-mail><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span><small>Correo</small><strong data-bind="correo"></strong></span></a></li>
+              <li><div class="ccard"><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><span><small>Ubicación</small><strong data-bind="direccion"></strong><em data-bind="direccionDetalle"></em></span></div></li>
+              <li><div class="ccard"><span class="ccard__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><span><small>Horario</small><span id="horario"></span></span></div></li>
+            </ul>
+
+            <div class="map">
+              <iframe id="map-frame" title="Mapa de ubicación de Energys 24" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              <div class="map__actions">
+                <a class="btn btn--primary btn--sm" id="map-google" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-navigation"/></svg>Cómo llegar (Google Maps)</a>
+                <a class="btn btn--outline btn--sm" id="map-waze" target="_blank" rel="noopener">Abrir en Waze</a>
+              </div>
+            </div>
+
+            <div class="follow">
+              <span>Síganos en redes</span>
+              <div class="socials" data-socials aria-label="Redes sociales"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================== PIE DE PÁGINA ====================== -->
+  <footer class="footer">
+    <div class="container footer__in">
+      <div class="footer__brand">
+        <a class="brand brand--footer" href="#inicio" aria-label="Energys 24 — volver al inicio">
+          <img class="brand__mark" src="assets/img/logo-symbol.svg" alt="" width="46" height="46" loading="lazy">
+          <span class="brand__word" aria-hidden="true">ENERGYS<b>24</b></span>
+        </a>
+        <p>Electromecánica en Desamparados, San José: sistemas solares, bombeo, piscinas, plantas eléctricas y calentadores.</p>
+        <div class="socials" data-socials aria-label="Redes sociales"></div>
+      </div>
+      <nav class="footer__col" aria-label="Servicios">
+        <h4>Servicios</h4>
+        <ul id="footer-services"></ul>
+      </nav>
+      <nav class="footer__col" aria-label="Enlaces">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sistema">Su sistema</a></li>
+          <li><a href="#calculadora">Calculadora solar</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#diagnostico">Diagnóstico rápido</a></li>
+          <li><a href="#cotizador">Cotizador</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a data-wa target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp</a></li>
+          <li><a data-tel><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-bind="telefono"></span></a></li>
+          <li data-if="correo"><a data-mail><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span data-bind="correo"></span></a></li>
+          <li><span class="footer__static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span data-bind="direccion"></span></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <div class="container footer__bar-in">
+        <p>© <span id="year"></span> <span data-bind="razonSocial"></span>. Todos los derechos reservados.</p>
+        <a href="#inicio">Volver arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================== FLOTANTES: subir + WhatsApp con menú ====================== -->
+  <div class="floaters" id="floaters">
+    <button class="totop" id="totop" type="button" aria-label="Volver arriba"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+    <div class="wa-widget" id="wa-widget">
+      <div class="wa-pop" id="wa-pop" role="dialog" aria-modal="false" aria-labelledby="wa-pop-title" hidden>
+        <div class="wa-pop__head">
+          <img src="assets/img/logo-symbol.svg" alt="" width="40" height="40">
+          <div><b id="wa-pop-title">Energys 24</b><small>Atención por WhatsApp</small></div>
+          <button class="wa-pop__x" id="wa-pop-x" type="button" aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+        </div>
+        <div class="wa-pop__body">
+          <p class="wa-pop__bubble">¡Hola! ¿En qué le podemos ayudar?</p>
+          <div class="wa-pop__opts" id="wa-opts"></div>
+        </div>
+        <div class="wa-pop__foot"><a data-tel><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Llamar al <span data-bind="telefono"></span></a></div>
+      </div>
+      <button class="wa-fab" id="wa-fab" type="button" aria-expanded="false" aria-controls="wa-pop" aria-label="Abrir atención por WhatsApp">
+        <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        <span class="wa-fab__label">¿Le ayudamos?</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ====================== VISOR DE FOTOS ====================== -->
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto del proyecto" hidden>
+    <button class="lb__btn lb__x" type="button" data-lb="close" aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button class="lb__btn lb__prev" type="button" data-lb="prev" aria-label="Foto anterior"><svg class="icon" aria-hidden="true"><use href="#i-left"/></svg></button>
+    <figure class="lb__fig"><div class="lb__media" id="lb-media"></div><figcaption id="lb-cap"></figcaption></figure>
+    <button class="lb__btn lb__next" type="button" data-lb="next" aria-label="Foto siguiente"><svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">Para ver los servicios y usar el cotizador active JavaScript, o escríbanos por WhatsApp al +506 8887 7242.</div>
+  </noscript>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/visuals.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

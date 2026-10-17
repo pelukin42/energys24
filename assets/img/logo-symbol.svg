@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Energys 24">
+  <defs>
+    <linearGradient id="e24-sun" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FF8A00"/></linearGradient>
+    <linearGradient id="e24-aqua" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3FE0F2"/><stop offset="1" stop-color="#0A8FBF"/></linearGradient>
+    <clipPath id="e24-clip"><circle cx="32" cy="32" r="28.5"/></clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#0A1B2E"/>
+  <g clip-path="url(#e24-clip)">
+    <path d="M0 43c8-5 16 5 24 0s16-5 24 0 12 4 16 1v20H0z" fill="url(#e24-aqua)"/>
+    <path d="M0 50c8-5 16 5 24 0s16-5 24 0 12 4 16 1v13H0z" fill="#07688F" opacity=".7"/>
+  </g>
+  <circle cx="32" cy="32" r="30" fill="none" stroke="url(#e24-sun)" stroke-width="3.2"/>
+  <path d="M36.5 7 17.5 35.5h12l-4.5 21.5 21.5-30.5H34.3z" fill="url(#e24-sun)" stroke="#0A1B2E" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>
